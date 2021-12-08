@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Button label="Concluir"/>
+  <v-select :items="items" :multiple="true" v-on:change="changeItem($event)"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Button from './components/VButton/Button.vue'
+import VSelect from './components/VSelect/Select.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      items: ["Banana", "Maça"]
+    }
+  },
   components: {
-    HelloWorld
+    Button,
+    VSelect
+  },
+  methods:{
+    changeItem(item){
+      console.log(item);
+    }
   }
 }
 </script>

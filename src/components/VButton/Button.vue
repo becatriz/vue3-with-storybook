@@ -33,7 +33,7 @@ export default {
 
   setup(props, { emit }) {
     props = reactive(props);
-    console.log(props);
+   
     return {
       classes: computed(() => ({
         'storybook-button': true,
@@ -45,6 +45,7 @@ export default {
         backgroundColor: props.backgroundColor,
       })),
       onClick() {
+        console.log("aaa");
         emit('click');
       }
     }
