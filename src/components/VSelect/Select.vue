@@ -1,15 +1,18 @@
 <template>
-  <select name="v-select" :multiple="multiple" >
+<div class="container">
+  <select name="v-select" :class="classes" :multiple="multiple" >
     <option value="" disabled selected >{{ placeholder }}</option>
-     <!-- @change change to show content below label -->
     <option :value="item" :key="item" v-for="item in items"  @click="$emit('change', item)">
       {{ item }}
     </option>
   </select>
+  </div>
 </template>
 
 <script>
+import { reactive, computed } from 'vue';
 import "./style.css";
+
 
 /**
  * Component Select Items
@@ -38,10 +41,16 @@ export default {
   emits: ["change"],
 
   setup(props) {
+    props = reactive(props);
+    
 
     const placeholder = props.multiple ? "Escolha múltipla" : "Escolha única";
 
     return {
+      classes: computed(() => ({
+        'dropdown': true,
+        'dropdown-multiple': props.multiple,
+      })),
       placeholder,
     };
   },

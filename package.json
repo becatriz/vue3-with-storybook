@@ -9,12 +9,16 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=80240047086b",
-    "test": "jest"
+    "test": "jest",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0",
-    "vue-jest": "5.0.0-alpha.8"
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "vue": "^3.2.24",
+    "vue-jest": "^5.0.0-alpha.10"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -22,22 +26,29 @@
     "@babel/preset-react": "^7.16.0",
     "@storybook/addon-actions": "^6.4.8",
     "@storybook/addon-essentials": "^6.4.8",
+    "@storybook/addon-jest": "^6.4.8",
     "@storybook/addon-links": "^6.4.8",
     "@storybook/addon-storyshots": "^6.4.8",
+    "@storybook/testing-vue3": "^0.0.1",
     "@storybook/vue3": "^6.4.8",
+    "@testing-library/vue": "^5.8.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.24",
+    "@vue/test-utils": "^2.0.0-rc.17",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-react-docgen": "^4.2.1",
     "chromatic": "^6.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "jest": "^27.4.3",
+    "jest-transform-stub": "^2.0.0",
     "storybook-addon-props": "^3.0.4",
-    "vue-loader": "^16.8.3"
+    "vue-loader": "^16.8.3",
+    "vue3-jest": "^27.0.0-alpha.1"
   },
   "eslintConfig": {
     "root": true,
